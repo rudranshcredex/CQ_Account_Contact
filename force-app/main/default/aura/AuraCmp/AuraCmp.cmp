@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="selectedContact" type="String" />
+
+    <lightning:card title=" Aura Component">
+
+        <div>
+            Selected Contact: {!v.selectedContact}
+           
+        </div>
+
+        <div>
+            <c:lwcCmp onselectcontactevent="{!c.contactSelected}" />
+        </div>
+    </lightning:card>
+
+</aura:component>

@@ -1,0 +1,62 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 11-16-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <div class="main">
+        <div class="task-box">
+            <div class="add-task">
+                <lightning-input 
+                  type="text"
+                  label="Enter Task"
+                  value={userInput}
+                  onchange={handleInput} 
+                  onkeyup={handleEnterKey}
+                ></lightning-input>
+    
+                <lightning-button 
+                  variant="brand"
+                  label="Add Task" 
+                  onclick={addTaskButton}
+                  class="custom-button"
+                ></lightning-button>
+            </div>
+        </div>
+
+        <div class="task-list">
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer custom-table">
+                <thead>
+                    <tr>
+                        <th>Checkbox</th>
+                        <th>Task</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={taskList} for:item="taskItem">
+                        <tr key={taskItem.id}>
+                            <td>
+                                <lightning-input 
+                                    type="checkbox" 
+                                    value={taskItem.id} 
+                                    checked={taskItem.isSelected} 
+                                    onchange={handleCheckboxChange}
+                                ></lightning-input>
+                            </td>
+                           
+                            <template if:true={taskItem.isSelected}>
+                                <td class="with-StrikeThrough">{taskItem.taskName}</td>
+                            </template>
+                            <template if:false={taskItem.isSelected}>
+                                <td>{taskItem.taskName}</td>
+                            </template>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</template>

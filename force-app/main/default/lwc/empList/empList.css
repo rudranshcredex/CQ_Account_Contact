@@ -1,0 +1,15 @@
+.search{
+    display: flex;
+    justify-content: center;
+    padding: 2%; 
+}
+.main{
+    background-color: white;
+}
+.popup-container{
+  width: 307px;
+  height: 208px;
+  z-index: 10;
+  transform: translate(15%, -135%);
+  
+}

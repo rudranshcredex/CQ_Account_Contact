@@ -1,0 +1,11 @@
+<template>
+    <h1> LWC </h1>
+    <div>
+        <p>Select</p>
+        <template for:each={lstContacts} for:item="contact">
+            <p style="cursor:pointer;" key={contact} onclick={selectContact}>
+                {contact}
+            </p>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,15 @@
+<template>
+    <div style="background:wheat">
+        <p>Parent component</p>
+
+    <lightning-button variant="brand" label="Click" onclick={handleClick}></lightning-button>
+    <template lwc:if={showData}>
+        <c-child></c-child>
+    </template>
+    </div>
+    <div>
+        <p>
+            <c-child onincreasecount={updateMessage}></c-child>
+        </p>
+    </div>
+</template>
